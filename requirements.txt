@@ -4,4 +4,4 @@ rdkit
 stmol==0.0.7
 scikit-learn
 joblib
-PaDEL-pywrapper
+PaDEL-pywrapper==1.0.5
