@@ -14,9 +14,9 @@ import joblib
 st.title("Test de ML para ligando-receptor")
 
 compound_smiles=st.text_input('Ingresa tu código SMILES','FCCC(=O)[O-]')
-m = Chem.MolFromSmiles(compound_smiles)
+mm = Chem.MolFromSmiles(compound_smiles)
 
-Draw.MolToFile(m,'mol.png')
+Draw.MolToFile(mm,'mol.png')
 st.image('mol.png')
 
 #######
@@ -26,4 +26,26 @@ robust_scaler = joblib.load('./archivos/robust_scaler.pickle')
 minmax_scaler = joblib.load('./archivos/minmax_scaler.pickle')
 #selector_lgbm = joblib.load('./archivos/selector_LGBM.pickle')
 #lgbm_model = joblib.load('./archivos/lgbm_best_model.pickle')
+
+# RDKit selected descriptors function
+def get_selected_RDKitdescriptors(smile, selected_descriptors, missingVal=None):
+    ''' Calculates only the selected descriptors for a molecule '''
+    res = {}
+    mol = Chem.MolFromSmiles(smile)
+    if mol is None:
+        return {desc: missingVal for desc in selected_descriptors}
+
+    for nm, fn in Descriptors._descList:
+        if nm in selected_descriptors:
+            try:
+                res[nm] = fn(mol)
+            except:
+                import traceback
+                traceback.print_exc()
+                res[nm] = missingVal
+    return res
+
+df = pd.DataFrame({'smiles': [compound_smiles]})
+st.dataframe(df)
+
 
