@@ -5,6 +5,9 @@ from stmol import showmol
 from rdkit import Chem
 from rdkit.Chem import Draw
 from rdkit.Chem import AllChem
+from rdkit.Chem import Descriptors
+from PaDEL_pywrapper import PaDEL
+from PaDEL_pywrapper import descriptors
 
 st.title("Test de ML para ligando-receptor")
 
@@ -13,3 +16,7 @@ m = Chem.MolFromSmiles(compound_smiles)
 
 Draw.MolToFile(m,'mol.png')
 st.image('mol.png')
+
+#######
+rdkit_archivo = joblib.load('./archivos/RDKit_select_descriptors.pickle')
+padel_archivo = joblib.load('./archivos/PaDEL_select_descriptors.pickle')
