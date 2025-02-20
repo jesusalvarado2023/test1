@@ -1,11 +1,6 @@
-import pickle
 import pandas as pd
 import numpy as np
 import streamlit as st
-from rdkit import Chem
-from rdkit.Chem import Descriptors
-from PaDEL_pywrapper import PaDEL
-from PaDEL_pywrapper import descriptors
 
 st.title("Test de ML para ligando-receptor")
 
