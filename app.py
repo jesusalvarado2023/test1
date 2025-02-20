@@ -25,5 +25,5 @@ PaDEL_select_descriptors = joblib.load('./archivos/PaDEL_select_descriptors.pick
 robust_scaler = joblib.load('./archivos/robust_scaler.pickle')
 minmax_scaler = joblib.load('./archivos/minmax_scaler.pickle')
 #selector_lgbm = joblib.load('./archivos/selector_LGBM.pickle')
-lgbm_model = joblib.load('./archivos/lgbm_best_model.pickle')
+#lgbm_model = joblib.load('./archivos/lgbm_best_model.pickle')
 
