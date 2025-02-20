@@ -1,5 +1,2 @@
-rdkit
-PaDEL-pywrapper
-pickle
+streamlit
 pandas
-numpy
