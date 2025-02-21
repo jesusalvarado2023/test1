@@ -45,6 +45,7 @@ def get_selected_RDKitdescriptors(smile, selected_descriptors, missingVal=None):
                 res[nm] = missingVal
     return res
 
+st.write("Descriptores RDKit")
 df = pd.DataFrame({'smiles': [compound_smiles]})
 st.dataframe(df)
 
