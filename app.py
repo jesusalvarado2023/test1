@@ -13,7 +13,7 @@ import joblib
 
 st.title("Test de ML para ligando-receptor")
 
-compound_smiles=st.text_input('Ingresa tu código SMILES','c1cccc(NC2=O)c1[C@]23[C@@]4(C)c5n(C@@HC(=O)N4)c(=O)c6c(n5)cccc6')
+compound_smiles=st.text_input('Ingresa tu código SMILES','c1cccc(NC2=O)c1[C@]23[C@@]4(C)c5n([C@@H](C3)C(=O)N4)c(=O)c6c(n5)cccc6')
 mm = Chem.MolFromSmiles(compound_smiles)
 
 Draw.MolToFile(mm,'mol.png')
