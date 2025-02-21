@@ -46,7 +46,7 @@ def get_selected_RDKitdescriptors(smile, selected_descriptors, missingVal=None):
     return res
 
 df = pd.DataFrame({'smiles': [compound_smiles]})
-st.dataframe(df)
+#st.dataframe(df)
 
 # Calculate selected RDKit descriptors
 RDKit_descriptors = [get_selected_RDKitdescriptors(m, RDKit_select_descriptors) for m in df['smiles']]
