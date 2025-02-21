@@ -6,7 +6,7 @@ from rdkit import Chem
 from rdkit.Chem import Draw
 from rdkit.Chem import AllChem
 from rdkit.Chem import Descriptors
-#from PaDEL_pywrapper import PaDEL
+from PaDEL_pywrapper import PaDEL
 #from PaDEL_pywrapper import descriptors
 import numpy as np
 import joblib
@@ -51,4 +51,4 @@ st.dataframe(df)
 # Calculate selected RDKit descriptors
 RDKit_descriptors = [get_selected_RDKitdescriptors(m, RDKit_select_descriptors) for m in df['smiles']]
 RDKit_df = pd.DataFrame(RDKit_descriptors)
-st.dataframe(RDKit_df)
+st.dataframe(RDKit_df) 
