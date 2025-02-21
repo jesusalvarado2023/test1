@@ -11,6 +11,8 @@ from rdkit.Chem import Descriptors
 import numpy as np
 import joblib
 
+st.title("Test de ML para ligando-receptor")
+
 compound_smiles=st.text_input('Ingresa tu código SMILES','c1cccc(NC2=O)c1[C@]23[C@@]4(C)c5n([C@@H](C3)C(=O)N4)c(=O)c6c(n5)cccc6')
 mm = Chem.MolFromSmiles(compound_smiles)
 
@@ -43,12 +45,11 @@ def get_selected_RDKitdescriptors(smile, selected_descriptors, missingVal=None):
                 res[nm] = missingVal
     return res
 
-st.write("Descriptores RDKit")
 df = pd.DataFrame({'smiles': [compound_smiles]})
 st.dataframe(df)
 
 # Calculate selected RDKit descriptors
 RDKit_descriptors = [get_selected_RDKitdescriptors(m, RDKit_select_descriptors) for m in df['smiles']]
 RDKit_df = pd.DataFrame(RDKit_descriptors)
-st.title("Test de ML para ligando-receptor")
+st.write("Descriptores RDKit")
 st.dataframe(RDKit_df) 
