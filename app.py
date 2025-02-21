@@ -6,7 +6,7 @@ from rdkit import Chem
 from rdkit.Chem import Draw
 from rdkit.Chem import AllChem
 from rdkit.Chem import Descriptors
-from PaDEL_pywrapper import PaDEL
+#from PaDEL_pywrapper import PaDEL
 #from PaDEL_pywrapper import descriptors
 import numpy as np
 import joblib
